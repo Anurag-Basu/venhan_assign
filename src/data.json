@@ -1,97 +1,96 @@
 {
-    "groups": [
-      {
-        "name": "API gateway",
-        "icon": "aws-api-gateway"
-      },
-      {
-        "name": "Lambda",
-        "icon": "aws-lambda"
-      },
-      {
-        "name": "S3",
-        "icon": "aws-simple-storage-service"
-      },
-      {
-        "name": "VPC Subnet",
-        "icon": "aws-vpc",
-        "nodes": {
-          "Main Server": {
-            "nodes": [
-              {
-                "name": "Server",
-                "icon": "aws-ec2"
-              },
-              {
-                "name": "Data",
-                "icon": "aws-rds"
-              }
-            ]
-          },
-          "Queue": {
-            "icon": "aws-auto-scaling"
-          },
-          "Compute Nodes": {
-            "color": "red",
-            "nodes": [
-              {
-                "name": "Worker1",
-                "icon": "aws-ec2"
-              },
-              {
-                "name": "Worker2",
-                "icon": "aws-ec2"
-              },
-              {
-                "name": "Worker3",
-                "icon": "aws-ec2"
-              }
-            ]
-          }
+  "groups": [
+    {
+      "name": "API gateway",
+      "icon": "aws-api-gateway"
+    },
+    {
+      "name": "Lambda",
+      "icon": "aws-lambda"
+    },
+    {
+      "name": "S3",
+      "icon": "aws-simple-storage-service"
+    },
+    {
+      "name": "VPC Subnet",
+      "icon": "aws-vpc",
+      "nodes": {
+        "Main Server": {
+          "nodes": [
+            {
+              "name": "Server",
+              "icon": "aws-ec2"
+            },
+            {
+              "name": "Data",
+              "icon": "aws-rds"
+            }
+          ]
+        },
+        "Queue": {
+          "icon": "aws-auto-scaling"
+        },
+        "Compute Nodes": {
+          "color": "red",
+          "nodes": [
+            {
+              "name": "Worker1",
+              "icon": "aws-ec2"
+            },
+            {
+              "name": "Worker2",
+              "icon": "aws-ec2"
+            },
+            {
+              "name": "Worker3",
+              "icon": "aws-ec2"
+            }
+          ]
         }
-      },
-      {
-        "name": "Analytics",
-        "icon": "aws-redshift"
       }
-    ],
-    "connections": [
-      {
-        "source": "API gateway",
-        "target": "Lambda"
-      },
-      {
-        "source": "Lambda",
-        "target": "Main Server"
-      },
-      {
-        "source": "Main Server",
-        "target": "Data"
-      },
-      {
-        "source": "Server",
-        "target": "Queue"
-      },
-      {
-        "source": "Queue",
-        "target": "Worker1"
-      },
-      {
-        "source": "Queue",
-        "target": "Worker2"
-      },
-      {
-        "source": "Queue",
-        "target": "Worker3"
-      },
-      {
-        "source": "S3",
-        "target": "Data"
-      },
-      {
-        "source": "Compute Nodes",
-        "target": "Analytics"
-      }
-    ]
-  }
-  
+    },
+    {
+      "name": "Analytics",
+      "icon": "aws-redshift"
+    }
+  ],
+  "connections": [
+    {
+      "source": "API gateway",
+      "target": "Lambda"
+    },
+    {
+      "source": "Lambda",
+      "target": "Main Server"
+    },
+    {
+      "source": "Main Server",
+      "target": "Data"
+    },
+    {
+      "source": "Server",
+      "target": "Queue"
+    },
+    {
+      "source": "Queue",
+      "target": "Worker1"
+    },
+    {
+      "source": "Queue",
+      "target": "Worker2"
+    },
+    {
+      "source": "Queue",
+      "target": "Worker3"
+    },
+    {
+      "source": "S3",
+      "target": "Data"
+    },
+    {
+      "source": "Compute Nodes",
+      "target": "Analytics"
+    }
+  ]
+}
